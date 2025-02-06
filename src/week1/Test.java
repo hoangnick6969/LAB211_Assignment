@@ -45,7 +45,7 @@ public class Test {
                     System.out.print("Enter output base (2, 10, 16): ");
                     int outputBase = scanner.nextInt();
                     BaseConverter baseConverter = new BaseConverter(inputValue, inputBase, outputBase);
-                    baseConverter.displayConverter();
+                   System.out.println("Converted value: " + baseConverter.convert());
                 }
                case 4 -> {
                     Display display = new Display();

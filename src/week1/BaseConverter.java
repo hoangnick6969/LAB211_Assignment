@@ -22,31 +22,35 @@ public class BaseConverter {
     }
 
     public String convert() {
-        int decimalValue = Integer.parseInt(inputValue, inputBase);
-        return switch (outputBase) {
-            case 2 -> Integer.toBinaryString(decimalValue);
-            case 10 -> String.valueOf(decimalValue);
-            case 16 -> Integer.toHexString(decimalValue).toUpperCase();
-            default -> "Invalid output base";
-        };
+        try {
+            long decimalValue = Long.parseLong(inputValue, inputBase);
+            return switch (outputBase) {
+                case 2 -> Long.toBinaryString(decimalValue);
+                case 10 -> String.valueOf(decimalValue);
+                case 16 -> Long.toHexString(decimalValue).toUpperCase();
+                default -> "Invalid output base";
+            };
+        } catch (NumberFormatException e) {
+            return "Invalid input value for base " + inputBase;
+        }
     }
 
     public void displayConverter(Scanner scanner) {
         System.out.print("Enter input value: ");
-        String inputValue = scanner.nextLine();
+        this.inputValue = scanner.nextLine().toUpperCase(); // Chuyển về chữ hoa để tránh lỗi hệ 16
 
         System.out.print("Enter input base (2, 10, 16): ");
-        int inputBase = scanner.nextInt();
-        scanner.nextLine(); 
+        this.inputBase = scanner.nextInt();
+        scanner.nextLine();
 
         System.out.print("Enter output base (2, 10, 16): ");
-        int outputBase = scanner.nextInt();
+        this.outputBase = scanner.nextInt();
+        scanner.nextLine();
 
-        BaseConverter baseConverter = new BaseConverter(inputValue, inputBase, outputBase);
-        System.out.println("Converted value: " + baseConverter.convert());
+        System.out.println("Converted value: " + this.convert());
     }
 
     void displayConverter() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println("No input provided. Please use the method with Scanner parameter.");
     }
 }
