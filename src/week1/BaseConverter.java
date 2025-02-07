@@ -37,7 +37,7 @@ public class BaseConverter {
 
     public void displayConverter(Scanner scanner) {
         System.out.print("Enter input value: ");
-        this.inputValue = scanner.nextLine().toUpperCase(); // Chuyển về chữ hoa để tránh lỗi hệ 16
+        this.inputValue = scanner.nextLine().toUpperCase();
 
         System.out.print("Enter input base (2, 10, 16): ");
         this.inputBase = scanner.nextInt();
