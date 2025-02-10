@@ -20,6 +20,7 @@ public class EquationSolver {
     public EquationSolver(double a, double b) {
         this.a = a;
         this.b = b;
+        this.c=c;
     }
 
     public EquationSolver(double a, double b, double c) {
@@ -132,7 +133,6 @@ class Display {
         double a = checkInputDouble();
         System.out.print("Enter B: ");
         double b = checkInputDouble();
-
         EquationSolver solver = new EquationSolver(a, b);
         try {
             double solution = solver.solveLinearEquation();

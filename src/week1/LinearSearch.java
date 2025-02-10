@@ -17,12 +17,15 @@ public class LinearSearch {
         array = new int[size];
         generateRandomArray();
     }
-
+    
     private void generateRandomArray() {
         Random random = new Random();
+        System.out.println("Generate array: ");
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(100) + 1;
+            System.out.println(array[i]+"");
         }
+        System.out.println();
     }
 
     public int search(int target) {
@@ -33,7 +36,7 @@ public class LinearSearch {
         }
         return -1;
     }
-
+    
     public void displayArray() {
         for (int num : array) {
             System.out.print(num + " ");
@@ -49,5 +52,5 @@ public class LinearSearch {
         } else {
             System.out.println("Number not found.");
         }
-    }
+    }   
 }

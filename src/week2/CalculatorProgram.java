@@ -14,7 +14,7 @@ public class CalculatorProgram {
             System.out.println("Calculator Menu:");
             System.out.println("1. Normal Calculator");
             System.out.println("2. BMI Calculator");
-            System.out.println("3. Back to Main Menu");
+            System.out.println("3. Exit  ");
             System.out.print("Enter your choice: ");
             int choice = checkInputIntLimit(1, 3);
 
@@ -32,36 +32,40 @@ public class CalculatorProgram {
     }
 
     private void normalCalculator() {
-        System.out.print("Enter first number: ");
-        double num1 = checkInputDouble();
+        System.out.print("Enter number: ");
+        double result = checkInputDouble();
+        while (true){
         System.out.print("Enter operator (+, -, *, /): ");
         char operator = in.nextLine().charAt(0);
-        System.out.print("Enter second number: ");
-        double num2 = checkInputDouble();
-
-        double result;
+        if (operator=='='){
+            System.out.println("Result: "+result);
+            break;
+        
+        }
+            System.out.print("Enter number: ");
+            double num=checkInputDouble();
         switch (operator) {
             case '+':
-                result = num1 + num2;
+                result +=num;
                 break;
             case '-':
-                result = num1 - num2;
+                result -=num;
                 break;
             case '*':
-                result = num1 * num2;
+                result *=num;
                 break;
             case '/':
-                if (num2 == 0) {
+                if (num == 0) {
                     System.out.println("Division by zero is not allowed.");
                     return;
                 }
-                result = num1 / num2;
+                result /=num;
                 break;
             default:
                 System.out.println("Invalid operator.");
                 return;
+            }
         }
-        System.out.println("Result: " + result);
     }
 
     private void BMICalculator() {
