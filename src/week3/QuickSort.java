@@ -10,6 +10,7 @@ package week3;
  */
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class QuickSort {
     public static void run() {
@@ -17,11 +18,13 @@ public class QuickSort {
         System.out.print("Enter number of array: ");
         int length = scanner.nextInt();
         int[] array = new int[length];
+        Random random=new Random();
         for (int i = 0; i < length; i++) {
-            array[i] = new Random().nextInt(length);
+            array[i] = random.nextInt(100)+1;
         }
+        System.out.println("Unsorted arrray: "+Arrays.toString(array));
         quickSort(array, 0, length - 1);
-        System.out.print("Sorted array: ");
+        System.out.print("Sorted array: "+Arrays.toString(array));
         for (int num : array) System.out.print(num + " ");
         System.out.println();
     }

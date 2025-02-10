@@ -6,6 +6,7 @@ package week3;
 
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Arrays;
 /**
  *
  * @author PC
@@ -23,14 +24,17 @@ public class BubbleSort {
     public void addValue() {
         Random random = new Random();
         for (int i = 0; i < this.array.length; i++) {
-            this.array[i] = random.nextInt(this.array.length);
+//            this.array[i] = random.nextInt(this.array.length);
+              this.array[i]=random.nextInt(100)+1;
         }
     }
 
     public void display() {
-        for (int i = 0; i < this.array.length; i++) {
-            System.out.println("The value of the " + (i + 1) + "th element in the array is: " + this.array[i]);
-        }
+//        for (int i = 0; i < this.array.length; i++) {
+//            System.out.println("The value of the " + (i + 1) + "th element in the array is: " + this.array[i]);
+//}
+  System.out.println(Arrays.toString(this.array)); 
+        
     }
 
     public void sortValue() {
@@ -49,12 +53,12 @@ public class BubbleSort {
        
         BubbleSort sorter = new BubbleSort(10);
         sorter.addValue();  
-        System.out.println("Array before sorting:");
+        System.out.println("Unsorted Array: ");
         sorter.display();   
 
         sorter.sortValue(); 
 
-        System.out.println("\nArray after sorting:");
+        System.out.println("\nSorted Array: ");
         sorter.display();  
     }
 }
