@@ -75,7 +75,7 @@ public class CalculatorProgram {
         double height = checkInputDouble();
 
         double bmi = weight / (height * height);
-        System.out.println("Your BMI is: " + bmi);
+        System.out.println("Your BMI is:  " + bmi);
         if (bmi < 18.5) {
             System.out.println("Underweight");
         } else if (bmi < 25) {

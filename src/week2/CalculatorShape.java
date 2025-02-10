@@ -8,16 +8,37 @@ package week2;
  *
  * @author PC
  */
-
-public class CalculorShape {
+import java.util.Scanner;
+public class CalculatorShape {
     public void run() {
-        System.out.println("Testing Shapes:");
-        Rectangle rect = new Rectangle(5, 10);
+       Scanner scanner =new Scanner (System.in);
+        System.out.println("Enter width and height of the rectangle");
+        double recWidth =scanner.nextDouble();
+        double recHeight=scanner.nextDouble();
+        
+        System.out.println("Enter radius of the circle");
+        double circleRadius=scanner.nextDouble();
+        
+        System.out.println("Enter three sides of the triangle: ");
+        double side1=scanner.nextDouble();
+        double side2=scanner.nextDouble();
+        double side3=scanner.nextDouble();
+       
+        if (!isValidTriangle(side1, side2, side3)) {
+            System.err.println("Invalid triangle sides. The sum of any two sides must be greater than the third side.");
+        } else {
+        Rectangle rect=new Rectangle(recWidth, recHeight);
+        Circle circle=new Circle(circleRadius);
+        Triangle triangle=new Triangle(side1, side2, side3);
+        
+        System.out.println("\nResults: ss");
         rect.printResult();
-        Circle circle = new Circle(7);
         circle.printResult();
-        Triangle triangle = new Triangle(3, 4, 5);
         triangle.printResult();
+    }
+}
+         private boolean isValidTriangle(double a, double b, double c) {
+        return (a + b > c) && (a + c > b) && (b + c > a);
     }
 }
 

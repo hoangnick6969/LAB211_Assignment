@@ -28,7 +28,7 @@ public class Test {
                     new CalculatorProgram().run();
                     break;
                 case 2:
-                    new CalculorShape().run();
+                    new CalculatorShape().run();
                     break;
                 case 3:
                     new Matrix().run();
@@ -41,15 +41,18 @@ public class Test {
     }
 
     private static int checkInputIntLimit(int min, int max) {
-        while (true) {
-            try {
-                int result = Integer.parseInt(in.nextLine());
-                if (result < min || result > max) {
-                    throw new NumberFormatException();
-                }
-                return result;
-            } catch (NumberFormatException ex) {
+    while (true) {
+        try {
+            String input = in.nextLine().trim(); // Đọc chuỗi và loại bỏ khoảng trắng đầu/cuối
+            int result = Integer.parseInt(input); // Chuyển thành số nguyên
+            
+            if (result < min || result > max) { 
                 System.err.println("Please enter a number between " + min + " and " + max + ".");
+                continue; // Quay lại vòng lặp để nhập lại
+            }
+            return result;
+        } catch (NumberFormatException ex) { 
+            System.err.println("Invalid input! Please enter a valid integer.");
             }
         }
     }
