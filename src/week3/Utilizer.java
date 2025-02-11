@@ -16,7 +16,9 @@ public class Utilizer {
     private static int checkInputInt() {
         while (true) {
             try {
-                return Integer.parseInt(scanner.nextLine().trim());
+                int input=Integer.parseInt(scanner.nextLine().trim());
+                if (input<2) throw new IllegalArgumentException("Error");
+                return input;
             } catch (NumberFormatException e) {
                 System.err.println("Invalid input. Please enter a valid integer:");
             }

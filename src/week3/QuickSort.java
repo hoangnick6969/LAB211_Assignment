@@ -25,8 +25,7 @@ public class QuickSort {
         System.out.println("Unsorted arrray: "+Arrays.toString(array));
         quickSort(array, 0, length - 1);
         System.out.print("Sorted array: "+Arrays.toString(array));
-        for (int num : array) System.out.print(num + " ");
-        System.out.println();
+     
     }
 
     private static void quickSort(int[] arr, int left, int right) {
