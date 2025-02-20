@@ -32,7 +32,7 @@ class Person {
             System.out.println("Data input is invalid");
         }
 
-        sc.nextLine(); // Consume newline
+        sc.nextLine(); 
         while (true) {
             System.out.print("Full Name: ");
             fullName = sc.nextLine();
@@ -54,7 +54,7 @@ class Person {
             System.out.println("Data input is invalid");
         }
 
-        sc.nextLine(); // Consume newline
+        sc.nextLine(); 
         while (true) {
             System.out.print("Major (<=30 characters): ");
             major = sc.nextLine();
