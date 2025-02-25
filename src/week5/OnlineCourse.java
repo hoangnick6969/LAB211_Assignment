@@ -2,46 +2,91 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 package week5;
+
 import java.util.Scanner;
-/**
- *
- * @author PC
- */
+
 public class OnlineCourse extends Course {
     private String platform;
-    private String instructors;
+    private String instructor;
     private String note;
-    public OnlineCourse(){
+
+    public OnlineCourse() {
         super();
-        this.platform="";
-        this.instructors ="";
-        this.note="";
+        this.platform = "";
+        this.instructor = "";
+        this.note = "";
     }
-    public void inputAll(){
-        Scanner scanner=new Scanner(System.in);
-        System.out.println("Enter Course ID: ");
-        this.courseId=scanner.nextLine();
-        System.out.println("Enter Course Name: ");
-        this.courseName=scanner.nextLine();
-        System.out.println("Enter Credits: ");
-        this.credits=scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("Enter Platform: ");
-        this.platform=scanner.nextLine();
-        System.out.println("Enter Instructors: ");
-        this.instructors=scanner.nextLine();
-        System.out.println("Enter Note: ");
-        this.note=scanner.nextLine();
-        if(this.courseId.isEmpty() || this.courseName.isEmpty()|| this.platform.isEmpty()){
-            System.out.println("Data input is invalid!");
-            return;
-        }
-        
+
+    public OnlineCourse(String courseId, String courseName, int credits, String platform, String instructor, String note) {
+        super(courseId, courseName, credits);
+        this.platform = platform;
+        this.instructor = instructor;
+        this.note = note;
     }
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
+    }
+
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public String getPlatform() {
+        return platform;
+    }
+
+    public String getInstructor() {
+        return instructor;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
     @Override
-    public void display(){
-        System.out.println("Online Course - ID: "+courseId+", Name: "+courseName+
-                ", Credits: "+credits+", Platform: "+platform+", Instructors: "+instructors+", Note: "+note);
+    public void inputAll() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Course ID: ");
+        setCourseId(scanner.nextLine());
+
+        System.out.print("Enter Course Name: ");
+        setCourseName(scanner.nextLine());
+
+        System.out.print("Enter Credits: ");
+        setCredits(scanner.nextInt());
+        scanner.nextLine(); 
+
+        System.out.print("Enter Platform: ");
+        setPlatform(scanner.nextLine());
+
+        System.out.print("Enter Instructor: ");
+        setInstructor(scanner.nextLine());
+
+        System.out.print("Enter Note: ");
+        setNote(scanner.nextLine());
+    }
+
+    @Override
+    public void display() {
+        System.out.println(toString());
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", Platform: " + platform + ", Instructor: " + instructor + ", Note: " + note;
     }
 }
+
+
+    
+
+    
+    
+
