@@ -21,6 +21,7 @@ public class BinarySearch {
         int[] array = new int[length];
         for (int i = 0; i < length; i++) {
             array[i] = new Random().nextInt(length);
+            System.out.println(array[i]);
         }
         bubbleSort(array);
         int result = binarySearch(array, search, 0, length - 1);
@@ -46,6 +47,8 @@ public class BinarySearch {
             else if (array[middle] > value) right = middle - 1;
             else left = middle + 1;
         }
+       
+        
         return -1;
     }
 }
