@@ -39,6 +39,7 @@ public class OnlineCourse extends Course {
         }
         
     }
+    @Override
     public void display(){
         System.out.println("Online Course - ID: "+courseId+", Name: "+courseName+
                 ", Credits: "+credits+", Platform: "+platform+", Instructors: "+instructors+", Note: "+note);

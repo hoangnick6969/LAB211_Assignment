@@ -39,6 +39,7 @@ private static Scanner in =new Scanner(System.in);
         BigInteger bigNumTwo = new BigInteger(numTwo);
         System.out.println("Result: ");
         System.out.println(bigNumOne.multiply(bigNumTwo));
+        System.out.println(bigNumOne.add(bigNumTwo));
         in.close();
     }
 }
