@@ -113,44 +113,5 @@ public class StudentManagement {
             }
         }
     }
-
-    public void displayMenu() {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("\nWELCOME TO STUDENT MANAGEMENT");
-            System.out.println("1. Create");
-            System.out.println("2. Find and Sort");
-            System.out.println("3. Update/Delete");
-            System.out.println("4. Report");
-            System.out.println("5. Exit");
-            System.out.print("Please choose an option: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
-
-            switch (choice) {
-                case 1:
-                    createStudent();
-                    break;
-                case 2:
-                    findAndSortStudents();
-                    break;
-                case 3:
-                    updateOrDeleteStudent();
-                    break;
-                case 4:
-                    report();
-                    break;
-                case 5:
-                    System.out.println("Exiting program...");
-                    return;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-            }
-        }
-    }
-
-    public static void main(String[] args) {
-        StudentManagement management = new StudentManagement();
-        management.displayMenu();
-    }
 }
+  
