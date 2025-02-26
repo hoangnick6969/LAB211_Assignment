@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package week5;
+package week5_course_largeNumber;
 
 import java.util.Scanner;
 
