@@ -30,7 +30,7 @@ public class ContactManager {
             System.out.println("No contacts available");
             return;
         }
-        System.out.println("--------------------------------- Display all Contact ----------------------------");
+        System.out.println("----Display all Contact ----");
         System.out.println(String.format("%-5s %-20s %-15s %-15s %-10s %-15s %-15s",
             "ID", "Name", "First Name", "Last Name", "Group", "Address", "Phone"));
         for (Contact contact : contacts) {

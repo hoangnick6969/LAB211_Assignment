@@ -27,8 +27,62 @@ public class Contact {
         this.phone = phone != null ? phone : "";  
         extractNames();
     }
+    public Contact(){
+        
+    }
+    public String getFullName() {
+        return fullName;
+    }
 
-    private void extractNames() {
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+ 
+    public int getId(){ 
+        return id; 
+    }
+    public String getPhone() {
+        return phone; 
+    }
+private void extractNames() {
         if (fullName != null && !fullName.trim().isEmpty()) {
             String[] names = fullName.trim().split("\\s+", 2);
             this.firstName = names[0];
@@ -38,10 +92,6 @@ public class Contact {
             this.lastName = "";
         }
     }
-
-    public int getId() { return id; }
-    public String getPhone() { return phone; }
-
     @Override
     public String toString() {
         return String.format("%-5d %-20s %-15s %-15s %-10s %-15s %-15s",
