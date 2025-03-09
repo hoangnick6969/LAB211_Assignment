@@ -17,7 +17,8 @@ public class Worker {
     private List<Salary> salaryhistory;
     private String workLocation;
 
-    public Worker(String id, String name, int age, List<Salary> salaryhistory, String workLocation) {
+
+    public Worker(String id, String name, String workLocation, String salaryhistory, ArrayList<Salary> salaryHistory1) {
         this.id = id;
         this.name = name;
         this.age = age;
