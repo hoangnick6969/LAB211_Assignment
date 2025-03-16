@@ -4,6 +4,7 @@
  */
 package week6.worker;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,11 +19,10 @@ public class Worker {
     private String workLocation;
 
 
-    public Worker(String id, String name, String workLocation, String salaryhistory, ArrayList<Salary> salaryHistory1) {
+    public Worker(String id, String name,int age, String workLocation, String salaryhistory, ArrayList<Salary> salaryHistory1) {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.salaryhistory = salaryhistory;
         this.workLocation = workLocation;
     }
 

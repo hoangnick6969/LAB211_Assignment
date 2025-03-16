@@ -47,13 +47,13 @@ public class ContactManagement{
         Contact ct1=new Contact();
         
         System.out.print("Enter Full Name: ");
-        String fullName = scanner.nextLine().trim();
+        String fullName = scanner.nextLine();
 
         System.out.print("Enter Group: ");
-        String group = scanner.nextLine().trim();
+        String group = scanner.nextLine();
 
         System.out.print("Enter Address: ");
-        String address = scanner.nextLine().trim();
+        String address = scanner.nextLine();
 
 //        System.out.print("Enter Phone: ");
         String phone ;
