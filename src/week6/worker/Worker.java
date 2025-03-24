@@ -18,13 +18,17 @@ public class Worker {
     private List<Salary> salaryhistory;
     private String workLocation;
 
-
-    public Worker(String id, String name,int age, String workLocation, String salaryhistory, ArrayList<Salary> salaryHistory1) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.workLocation = workLocation;
+public Worker(String id, String name, int age, ArrayList<Salary> salaryHistory1, String workLocation) {
+    this.id = id;
+    this.name = name;
+    this.age = age;
+    this.workLocation = workLocation;
+    this.salaryhistory = new ArrayList<>(); // Initialize salary history
+    if (salaryHistory1 != null) {
+        this.salaryhistory.addAll(salaryHistory1); // Add existing salary history if passed
     }
+}
+
 
     public String getId() {
         return id;

@@ -22,20 +22,40 @@ public class WorkerManagement {
     workerList.add(w);
     }
         public void getInformationSalary(){
-        for(Worker w:workerList){
-        String temp=w.toString();
-        for(Salary s: w.getSalaryhistory){
-        System.out.println(temp+ s.toString());
-            }
-        }   
-    }
-    public void changeUpSalary(String id,double money){
-        for(Worker w: workerList){
-            if(w.getId().equals(id)){
-                w.addSalary(new Salary(money,"UP",java.time.LocalDate.now().toString()));
-            }
+    for(Worker w : workerList){
+        String temp = w.toString();
+        for(Salary s : w.getSalaryhistory()){
+            System.out.println(temp + s.toString());
+        }
+    }   
+}
+
+    public void changeUpSalary(String id, double money){
+    for(Worker w : workerList){
+        if(w.getId().equals(id)){
+            w.addSalary(new Salary(money, "UP", java.time.LocalDate.now().toString()));
         }
     }
+}
+public boolean changeSalary(String id, double amount, boolean isIncrease) throws Exception {
+    if(amount <= 0) {
+        throw new Exception("Amount must be greater than 0");
+    }
+
+    for(Worker worker : workerList) {
+        if(worker.getId().equals(id)) {
+            double currentSalary = worker.getSalaryhistory().isEmpty() ? 0 : worker.getSalaryhistory().get(worker.getSalaryhistory().size() - 1).getSalary();
+            double newSalary = isIncrease ? currentSalary + amount : currentSalary - amount;
+
+            Salary newSalaryRecord = new Salary(newSalary, isIncrease ? "UP" : "DOWN", java.time.LocalDate.now().toString());
+            worker.addSalary(newSalaryRecord);
+            return true;
+        }
+    }
+
+    throw new Exception("Worker ID not found");
+}
+
 //    
 //    public boolean addWorker(Worker worker) throws Exception{
 //        if(worker.getId()==null||worker.getId().trim().isEmpty()){

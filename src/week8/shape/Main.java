@@ -17,9 +17,14 @@ public class Main {
         
         for(Shape shape:shapes){
             System.out.println("Shape:"+shape);
-            
+            if(shape instanceof TwoDimensionalShape){
+                System.out.println("Area"+((TwoDimensionalShape)shape).getArea());
+            }else if(shape instanceof  ThreeDimensionalShape){
+                System.out.println("Area"+((ThreeDimensionalShape)shape).getArea());
+                System.out.println("Volume"+((ThreeDimensionalShape)shape).getVolume());
+            }
             //
-            
+            System.out.println();
             
         }System.out.println();
     }
