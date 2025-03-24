@@ -18,12 +18,9 @@ public class Main {
         for(Shape shape:shapes){
             System.out.println("Shape:"+shape);
             
-            if(shape instanceof TwoDimensionalShape){
-                System.out.printf("Area:%.2f%n",shape.getArea());
-            }else if(shape instanceof ThreeDimensionalShape){
-                System.out.printf("Dien tich be mat: %.2f%n",shape.getArea());
-                System.out.printf("The tich: %.2f%n",((ThreeDimensionalShape) shape).getVolume());
-            }
+            //
+            
+            
         }System.out.println();
     }
 }
